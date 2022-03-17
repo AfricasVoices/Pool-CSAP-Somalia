@@ -9,18 +9,16 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     description="Creates the initial CSAP-Somalia pool using demographics flows from EU-PCVE s01, FCDO-EiE, TIS-Plus, "
                 "USAID-IBTCI, and JPLG-2020.",
     engagement_database=EngagementDatabaseClientConfiguration(
-        credentials_file_url="gs://avf-credentials/firebase-test.json",  # TODO: Switch to production
-        database_path="engagement_db_experiments/csap_test"
+        credentials_file_url="gs://avf-credentials/avf-engagement-databases-firebase-credentials-file.json",
+        database_path="engagement_databases/CSAP_Somalia"
     ),
     uuid_table=UUIDTableClientConfiguration(
-        credentials_file_url="gs://avf-credentials/firebase-test.json",  # TODO: Switch to production
-        table_name="_engagement_db_csap_test",  # TODO: Switch to production
+        credentials_file_url="gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
+        table_name="avf-global-urn-to-participant-uuid",
         uuid_prefix="avf-participant-uuid-"
     ),
     operations_dashboard=OperationsDashboardConfiguration(
-        # TODO: Switch to production
-        # credentials_file_url="gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json",
-        credentials_file_url="gs://avf-credentials/avf-dashboards-test-firebase-credentials.json"
+        credentials_file_url="gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json",
     ),
     rapid_pro_sources=[
         RapidProSource(
@@ -92,8 +90,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         # TODO: Include the recovery csvs from EU-PCVE s01
     ],
     coda_sync=CodaConfiguration(
-        # TODO: Switch to production
-        coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-staging.json"),
+        coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
             project_users_file_url="gs://avf-project-datasets/2021/EU-PCVE/s02/coda_users.json",
             dataset_configurations=[
@@ -230,7 +227,6 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     ),
     archive_configuration=ArchiveConfiguration(
         archive_upload_bucket="gs://pipeline-execution-backup-archive",
-        # TODO: update to production
-        bucket_dir_path="Test/2022/Create-CSAP-Somalia-Pool"
+        bucket_dir_path="2022/Create-CSAP-Somalia-Pool"
     )
 )
