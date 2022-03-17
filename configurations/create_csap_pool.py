@@ -181,6 +181,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 ),
 
             ],
+            set_dataset_from_ws_string_value=True,
             ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset")
         )
     ),
