@@ -6,15 +6,9 @@ IMAGE_NAME="$(<configurations/docker_image_name.txt)"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --dry-run)
-            DRY_RUN="--dry-run"
-            shift;;
         --incremental-cache-volume)
             INCREMENTAL_ARG="--incremental-cache-path /cache"
             INCREMENTAL_CACHE_VOLUME_NAME="$2"
-            shift 2;;
-        --local-archive)
-            LOCAL_ARCHIVE_PATHS+=("$2")
             shift 2;;
         --)
             shift
@@ -26,9 +20,8 @@ done
 
 # Check that the correct number of arguments were provided.
 if [[ $# -ne 5 ]]; then
-    echo "Usage: $0
-    [--dry-run] [--incremental-cache-volume <incremental-cache-volume>] 
-    [--local-archive <local_archive>] : set a single option with argument, repeat it multiple times
+    echo "Usage: $0 
+    [--incremental-cache-volume <incremental-cache-volume>] 
     <user> <google-cloud-credentials-file-path> <configuration-file> <code-schemes-dir> <data-dir>"
     exit
 fi
@@ -40,17 +33,8 @@ CONFIGURATION_FILE=$3
 CODE_SCHEMES_DIR=$4
 DATA_DIR=$5
 
-# Set local archive arguments if specified
-LOCAL_ARCHIVE_ARGS=""
-for LOCAL_ARCHIVE_PATH in "${LOCAL_ARCHIVE_PATHS[@]}"; do
-    IFS="=" # Setting equal sign as delimiter 
-    read -a strarr <<<"$LOCAL_ARCHIVE_PATH" # Reading str as an array of tokens separated by IFS 
-    gs_url=${strarr[0]}; local_archive_dir=$(basename ${strarr[1]})
-    LOCAL_ARCHIVE_ARGS+=" --local-archive $gs_url=/$local_archive_dir"
-done
-
-CMD="pipenv run python -u sync_rapid_pro_to_engagement_db.py ${DRY_RUN} ${INCREMENTAL_ARG} ${LOCAL_ARCHIVE_ARGS} \
-    ${USER} /credentials/google-cloud-credentials.json configuration"
+CMD="pipenv run python -u engagement_db_to_analysis.py ${INCREMENTAL_ARG} ${USER} \
+    /credentials/google-cloud-credentials.json configuration /data/membership-groups /data/analysis-outputs"
 
 if [[ "$INCREMENTAL_ARG" ]]; then
     container="$(docker container create -w /app --mount source="$INCREMENTAL_CACHE_VOLUME_NAME",target=/cache "$IMAGE_NAME" /bin/bash -c "$CMD")"
@@ -71,21 +55,13 @@ docker cp "$CODE_SCHEMES_DIR" "$container:/app/code_schemes"
 echo "Copying $CONFIGURATION_FILE -> $container_short_id:/app/configuration.py"
 docker cp "$CONFIGURATION_FILE" "$container:/app/configuration.py"
 
-for LOCAL_ARCHIVE_PATH in "${LOCAL_ARCHIVE_PATHS[@]}"; do
-    IFS="=" # Setting equal sign as delimiter 
-    read -a strarr <<<"$LOCAL_ARCHIVE_PATH" # Reading str as an array of tokens separated by IFS 
-    
-    # Expand the tilde character to home directory if available
-    path=$(pipenv run python -c "import os.path; print(os.path.expanduser(\"${strarr[1]}\"))")
-    local_archive_dir=$(basename $path)
-    
-    echo "Copying $path -> $container_short_id:/$local_archive_dir"
-    docker cp "$path" "$container:/$local_archive_dir"
-done
-
 # Run the container
 echo "Starting container $container_short_id"
 docker start -a -i "$container"
+
+# Copy the output data back out of the container
+echo "Copying $container_short_id:/data/. -> $DATA_DIR"
+docker cp "$container:/data/." "$DATA_DIR"
 
 # Copy cache data out of the container for backup
 if [[ "$INCREMENTAL_ARG" ]]; then
