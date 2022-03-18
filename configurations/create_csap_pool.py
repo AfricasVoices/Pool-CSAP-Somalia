@@ -87,13 +87,79 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         )
     ],
     csv_sources=[
-        # TODO: Include the recovery csvs from EU-PCVE s01
+        # These CSV sources are from EU s01, where approximately half of messages from Hormuud via Shaqodoon didn't
+        # make it to TextIt.
+        CSVSource(
+            "gs://avf-project-datasets/2022/CREATE-CSAP-POOL/recovery_csvs/recovered_golis_s01e01_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s01e01")
+            ],
+            timezone="Africa/Mogadishu"
+        ),
+        CSVSource(
+            "gs://avf-project-datasets/2022/CREATE-CSAP-POOL/recovery_csvs/recovered_golis_s01e03_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s01e03")
+            ],
+            timezone="Africa/Mogadishu"
+        ),
+        CSVSource(
+            "gs://avf-project-datasets/2022/CREATE-CSAP-POOL/recovery_csvs/recovered_hormuud_s01_aug_sep_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s01e01", start_date=isoparse("2021-08-29T00:00:00+03:00"), end_date=isoparse("2021-09-04T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s01e02", start_date=isoparse("2021-09-05T00:00:00+03:00"), end_date=isoparse("2021-09-11T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s01e03", start_date=isoparse("2021-09-12T00:00:00+03:00"), end_date=isoparse("2021-09-18T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s01e04", start_date=isoparse("2021-09-19T00:00:00+03:00"), end_date=isoparse("2021-09-25T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s01e05", start_date=isoparse("2021-09-26T00:00:00+03:00"), end_date=isoparse("2021-09-30T24:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        )
     ],
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
             project_users_file_url="gs://avf-project-datasets/2021/EU-PCVE/s02/coda_users.json",
             dataset_configurations=[
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s01e01",
+                    engagement_db_dataset="eu_pcve_s01e01",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s01e01"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s01e01"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s01e02",
+                    engagement_db_dataset="eu_pcve_s01e02",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s01e02"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s01e02"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s01e03",
+                    engagement_db_dataset="eu_pcve_s01e03",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s01e03"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s01e03"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s01e04",
+                    engagement_db_dataset="eu_pcve_s01e04",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s01e04"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s01e04"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s01e05",
+                    engagement_db_dataset="eu_pcve_s01e05",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s01e05"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s01e05"
+                ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
                     engagement_db_dataset="location",
