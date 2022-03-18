@@ -193,7 +193,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             normal_datasets=[
                 DatasetConfiguration(
                     engagement_db_datasets=["location"],
-                    rapid_pro_contact_field=ContactField(key="csap_pool_district", label="csap pool district")
+                    rapid_pro_contact_field=ContactField(key="csap_pool_location", label="csap pool location")
                 ),
                 DatasetConfiguration(
                     engagement_db_datasets=["age"], 
