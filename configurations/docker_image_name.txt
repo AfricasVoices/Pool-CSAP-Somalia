@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/test-pipeline-engagement-db:build-2003293645-attempt-1
+ghcr.io/africasvoices/test-pipeline-engagement-db:parse-ms
