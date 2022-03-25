@@ -39,6 +39,16 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             )
         )
     ],
+    csv_sources=[
+        CSVSource(
+            "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_03_20_to_2022_03_22_de_identified.csv",
+            engagement_db_datasets=[
+                # This contains data from 20th March, until 22nd March 13:25 EAT.
+                CSVDatasetConfiguration("eu_pcve_s02e01", start_date=isoparse("2022-03-20T00:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        )
+    ],
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
