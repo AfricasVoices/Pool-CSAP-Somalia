@@ -158,6 +158,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     )
                 ]
             ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s02e02"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="rvi_elections_s02e02_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e02"),
+                        analysis_dataset="s02e02"
+                    )
+                ]
+            ),
             OperatorDatasetConfiguration(
                 raw_dataset="operator_raw",
                 coding_configs=[
