@@ -3,7 +3,62 @@
   "Name": "RQA S02E01",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-97435a48",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 1,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8357c90d",
+      "CodeType": "Normal",
+      "DisplayText": "encouragement and support",
+      "NumericValue": 2,
+      "StringValue": "encouragement_and_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a7a85cab",
+      "CodeType": "Normal",
+      "DisplayText": "maintaining peace and security",
+      "NumericValue": 3,
+      "StringValue": "maintaining_peace_and_security",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a8484151",
+      "CodeType": "Normal",
+      "DisplayText": "creating awareness",
+      "NumericValue": 4,
+      "StringValue": "creating_awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-ccc69dc2",
+      "CodeType": "Normal",
+      "DisplayText": "women are important",
+      "NumericValue": 5,
+      "StringValue": "women_are_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4daa65cb",
+      "CodeType": "Normal",
+      "DisplayText": "need for justice",
+      "NumericValue": 6,
+      "StringValue": "need_for_justice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-77dd4d6e",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
