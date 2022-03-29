@@ -1,8 +1,110 @@
 from core_data_modules.cleaners import somali
 from core_data_modules.cleaners.codes import Codes
 from dateutil.parser import isoparse
+from datetime import timedelta
 
 from src.pipeline_configuration_spec import *
+
+
+def create_traffic_labels_configuration():
+    """
+    Creates the traffic label configurations for the promos.
+
+    Promos run 3 times per day, 3 days a week (Sun-Tue), per station.
+
+    :return:
+    :rtype: list of TrafficLabel
+    """
+
+    # Lists radio station, time of day (morning/midday/evening), and scheduled promo start time.
+    promo_schedule = [
+        ("Radio Codka Bartamaha, Subax",  "06:59"),
+        ("Radio Codka Bartamaha, Duhur",  "12:45"),
+        ("Radio Codka Bartamaha, Habeen", "18:55"),
+
+        ("Radio Hayaan, Subax",  "07:45"),
+        ("Radio Hayaan, Duhur",  "12:45"),
+        ("Radio Hayaan, Habeen", "18:44"),
+
+        ("Radio Galgaduud, Subax",  "08:25"),
+        ("Radio Galgaduud, Duhur",  "12:50"),
+        ("Radio Galgaduud, Habeen", "19:20"),
+
+        ("Radio Sooyaal Caabudwaaq, Subax",  "07:20"),
+        ("Radio Sooyaal Caabudwaaq, Duhur",  "13:25"),
+        ("Radio Sooyaal Caabudwaaq, Habeen", "19:25"),
+
+        ("Radio Cadaado, Subax",  "07:59"),
+        ("Radio Cadaado, Duhur",  "13:28"),
+        ("Radio Cadaado, Habeen", "20:58"),
+
+        ("Radio Daljir (Garowe), Subax",  "07:00"),
+        ("Radio Daljir (Garowe), Duhur",  "12:20"),
+        ("Radio Daljir (Garowe), Habeen", "16:57"),
+
+        ("Radio Galkacyo, Subax",  "07:56"),
+        ("Radio Galkacyo, Duhur",  "13:59"),
+        ("Radio Galkacyo, Habeen", "18:45"),
+
+        ("Radio Daljir (Bosaso), Subax",  "07:45"),
+        ("Radio Daljir (Bosaso), Duhur",  "12:25"),
+        ("Radio Daljir (Bosaso), Habeen", "20:50"),
+
+        ("Radio Codka Nabada, Subax",  "06:58"),
+        ("Radio Codka Nabada, Duhur",  "14:31"),
+        ("Radio Codka Nabada, Habeen", "19:58"),
+
+        ("Radio Galdogob, Subax",  "06:50"),
+        ("Radio Galdogob, Duhur",  "12:50"),
+        ("Radio Galdogob, Habeen", "19:55"),
+
+        ("Radio Kismaayo, Subax",  "07:00"),
+        ("Radio Kismaayo, Duhur",  "12:55"),
+        ("Radio Kismaayo, Habeen", "19:45"),
+
+        ("Star FM, Subax",  "06:55"),
+        ("Star FM, Duhur",  "13:25"),
+        ("Star FM, Habeen", "20:55"),
+
+        ("Radio Gedo, Subax",  "07:25"),
+        ("Radio Gedo, Duhur",  "13:15"),
+        ("Radio Gedo, Habeen", "19:25"),
+
+        ("Radio Markableey, Subax",  "07:30"),
+        ("Radio Markableey, Duhur",  "13:38"),
+        ("Radio Markableey, Habeen", "20:00"),
+
+        ("Radio Xog-maal, Subax", "07:45"),
+        ("Radio Xog-maal, Duhur", "11:45"),
+        ("Radio Xog-maal, Habeen", "20:45"),
+    ]
+
+    traffic_labels = []
+    for episode in range(1, 4):
+        for promo in promo_schedule:
+            for day in range(0, 3):
+                # Name the label after the episode, day of week, and promo id.
+                episode_name = f"s02e0{episode}"
+                day_name = ["Sunday", "Monday", "Tuesday"][day]
+                label = f"{episode_name}, {promo[0]}, {day_name}"
+
+                # Compute the start time for this promo.
+                # Promos run Sunday - Tuesday, for 3 weeks, at the same time every week, starting on March 20th.
+                project_start_date = isoparse("2022-03-20T00:00+03:00")
+                week_offset = timedelta(days=(episode - 1) * 7)
+                day_offset = timedelta(days=day)
+                parsed_promo_time = datetime.strptime(promo[1], "%H:%M")
+                time_offset = timedelta(hours=parsed_promo_time.hour, minutes=parsed_promo_time.minute)
+                start_date = project_start_date + week_offset + day_offset + time_offset
+
+                # Based on analysis of the traffic dashboard, spikes around a promo are short.
+                # Only count messages sent within 20 minutes of the promo in this estimate.
+                end_date = start_date + timedelta(minutes=20)
+
+                traffic_labels.append(TrafficLabel(start_date, end_date, label))
+
+    return traffic_labels
+
 
 PIPELINE_CONFIGURATION = PipelineConfiguration(
     pipeline_name="EU-PCVE-S02",
@@ -148,10 +250,10 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         )
     ),
     analysis=AnalysisConfiguration(
-        google_drive_upload=GoogleDriveUploadConfiguration(
-            credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-            drive_dir="eu_pcve_analysis_outputs/s02"
-        ),
+        # google_drive_upload=GoogleDriveUploadConfiguration(
+        #     credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
+        #     drive_dir="eu_pcve_analysis_outputs/s02"
+        # ),
         dataset_configurations=[
             AnalysisDatasetConfiguration(
                 engagement_db_datasets=["eu_pcve_s02e01"],
@@ -276,7 +378,8 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 ]
             ),
         ],
-        ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset")
+        ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset"),
+        traffic_labels=create_traffic_labels_configuration()
     ),
     archive_configuration=ArchiveConfiguration(
         archive_upload_bucket="gs://pipeline-execution-backup-archive",
