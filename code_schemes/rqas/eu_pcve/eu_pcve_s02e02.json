@@ -52,18 +52,10 @@
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-7c494e63",
-      "CodeType": "Normal",
-      "DisplayText": "women should not participate",
-      "NumericValue": 7,
-      "StringValue": "women_should_not_participate",
-      "VisibleInCoda": true
-    },
-    {
       "CodeID": "code-9fb42e6f",
       "CodeType": "Normal",
       "DisplayText": "other theme",
-      "NumericValue": 8,
+      "NumericValue": 7,
       "StringValue": "other_theme",
       "VisibleInCoda": true
     },
