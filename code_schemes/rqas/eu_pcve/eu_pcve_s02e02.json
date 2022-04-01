@@ -3,7 +3,62 @@
   "Name": "RQA S02E02",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-6fb2567e",
+      "CodeType": "Normal",
+      "DisplayText": "provide peace and stability",
+      "NumericValue": 1,
+      "StringValue": "provide_peace_and_stability",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d49e9022",
+      "CodeType": "Normal",
+      "DisplayText": "need for justice",
+      "NumericValue": 2,
+      "StringValue": "need_for_justice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-ff81fcbe",
+      "CodeType": "Normal",
+      "DisplayText": "women have important role",
+      "NumericValue": 3,
+      "StringValue": "women_have_important_role",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-124785bd",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 4,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1c8ece49",
+      "CodeType": "Normal",
+      "DisplayText": "support and encouragement for women",
+      "NumericValue": 5,
+      "StringValue": "support_and_encouragement_for_women",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-068cac08",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 6,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9fb42e6f",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
