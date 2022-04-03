@@ -29,6 +29,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 flow_result_configurations=[
                     FlowResultConfiguration("csap_eu_pcve_s02e01_activation", "rqa_eu_pcve_s02e01", "eu_pcve_s02e01"),
                     FlowResultConfiguration("csap_eu_pcve_s02e02_activation", "rqa_eu_pcve_s02e02", "eu_pcve_s02e02"),
+                    FlowResultConfiguration("csap_eu_pcve_s02e03_activation", "rqa_eu_pcve_s02e03", "eu_pcve_s02e03"),
 
                     # (Demographics use the same flow as season 1)
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
@@ -76,6 +77,14 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e02"), auto_coder=None)
                     ],
                     ws_code_string_value="eu_pcve_s02e02"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s02e03",
+                    engagement_db_dataset="eu_pcve_s02e03",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e03"), auto_coder=None)
+                    ],
+                    ws_code_string_value="eu_pcve_s02e03"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
@@ -172,6 +181,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     CodingConfiguration(
                         code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e02"),
                         analysis_dataset="s02e02"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s02e03"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s02e03_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e03"),
+                        analysis_dataset="s02e03"
                     )
                 ]
             ),
