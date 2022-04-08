@@ -55,6 +55,16 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 CSVDatasetConfiguration("eu_pcve_s02e01", start_date=isoparse("2022-03-22T13:30:00+03:00"), end_date=isoparse("2022-03-25T24:00:00+03:00"))
             ],
             timezone="Africa/Mogadishu"
+        ),
+        CSVSource(
+            # This CSV contains data from Golis' outage all day Sunday 27th and the early morning on the 28th.
+            # It only contains data that we didn't see in TextIt, so we can recover all the messages in this file
+            # without a timestamp filter.
+            "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_golis_2022_03_27_to_2022_03_28_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s02e02")
+            ],
+            timezone="Africa/Mogadishu"
         )
     ],
     coda_sync=CodaConfiguration(
