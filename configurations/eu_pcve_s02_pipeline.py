@@ -59,8 +59,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         CSVSource(
             "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_03_26_de_identified.csv",
             engagement_db_datasets=[
-                CSVDatasetConfiguration("eu_pcve_s02e01", start_date=isoparse("2022-03-26T00:00:00+03:00"),
-                                        end_date=isoparse("2022-03-26T24:00:00+03:00"))
+                CSVDatasetConfiguration("eu_pcve_s02e01", start_date=isoparse("2022-03-26T00:00:00+03:00"), end_date=isoparse("2022-03-26T24:00:00+03:00"))
             ],
             timezone="Africa/Mogadishu"
         ),
