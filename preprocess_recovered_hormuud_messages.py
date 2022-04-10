@@ -254,7 +254,7 @@ if __name__ == "__main__":
             unmatched_messages.append(msg)
     # TODO: Write the duplicated messages to disk so we can use them to de-duplicate the data in the engagement db.
     log.info(f"Attempted to find duplicates in unmatched messages: "
-             f"Found {len(rapid_pro_messages) - len(unmatched_messages)} messages that were duplicates,"
+             f"Found {len(rapid_pro_messages) - len(unmatched_messages)} messages that were duplicates, "
              f"{len(unmatched_messages)} unmatched messages remain")
 
     if len(unmatched_messages) > 0:
