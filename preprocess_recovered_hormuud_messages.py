@@ -125,6 +125,20 @@ if __name__ == "__main__":
     timestamp_matches_log_output_csv_path = args.timestamp_matches_log_output_csv_path
     output_csv_path = args.output_csv_path
 
+    # Define the maximum time difference we can observe between a message in rapid pro and in the recovery csv for it
+    # to count as a match.
+    max_time_delta = timedelta(minutes=5)
+    if start_date >= isoparse("2022-04-03T00:00+03:00"):
+        # Since the April 3rd, when the short code was "fixed", we've been experiencing a longer lag.
+        # If processing data on or since that date, use a 7 minute timedelta when searching rather than 5.
+        # (We leave the old 5 minute timedelta for older dates so that this script will still give consistent results
+        #  for exports made previously)
+        max_time_delta = timedelta(minutes=7)
+    else:
+        # Prevent accidents in case this script is reused across the time delta transition.
+        assert end_date < isoparse("2022-04-03T00:00+03:00")
+    log.info(f"Using maximum message time delta of {max_time_delta}")
+
     # Get messages from Rapid Pro and from the recovery csv
     rapid_pro_messages = get_incoming_hormuud_messages_from_rapid_pro(
         google_cloud_credentials_file_path, rapid_pro_domain, rapid_pro_token_file_url,
@@ -172,7 +186,7 @@ if __name__ == "__main__":
         for recovery_item in recovered_lut[rapid_pro_msg.urn]:
             if recovery_item["rapid_pro_message"] is None and \
                     recovery_item["recovered_message"]["Message"] == rapid_pro_text and \
-                    rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < timedelta(minutes=5):
+                    rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < max_time_delta:
                 recovery_item["rapid_pro_message"] = rapid_pro_msg
                 matched_messages.append(rapid_pro_msg)
                 break
@@ -203,7 +217,7 @@ if __name__ == "__main__":
         for recovery_item in recovered_lut[rapid_pro_msg.urn]:
             if recovery_item["rapid_pro_message"] is None and \
                     recovery_item["recovered_message"]["Message"] == rapid_pro_text and \
-                    rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < timedelta(minutes=5):
+                    rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < max_time_delta:
                 recovery_item["rapid_pro_message"] = rapid_pro_msg
                 matched_messages.append(rapid_pro_msg)
                 break
@@ -224,7 +238,7 @@ if __name__ == "__main__":
         for rapid_pro_msg in rapid_pro_messages:
             for recovery_item in recovered_lut[rapid_pro_msg.urn]:
                 if recovery_item["rapid_pro_message"] is None and \
-                        rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < timedelta(minutes=5):
+                        rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < max_time_delta:
                     writer.writerow({
                         "Rapid Pro": rapid_pro_msg.text,
                         "Hormuud Recovery": recovery_item["recovered_message"]["Message"]
