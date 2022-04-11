@@ -3,7 +3,62 @@
   "Name": "RQA S02E03",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-67276fad",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 1,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-709675ea",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b8518d94",
+      "CodeType": "Normal",
+      "DisplayText": "honesty and trust",
+      "NumericValue": 3,
+      "StringValue": "honesty_and_trust",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-cfe8be42",
+      "CodeType": "Normal",
+      "DisplayText": "need for justice",
+      "NumericValue": 4,
+      "StringValue": "need_for_justice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-591850bd",
+      "CodeType": "Normal",
+      "DisplayText": "leadership roles for women",
+      "NumericValue": 5,
+      "StringValue": "leadership_roles_for_women",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4ae42c0a",
+      "CodeType": "Normal",
+      "DisplayText": "support and encouragement",
+      "NumericValue": 6,
+      "StringValue": "support_and_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-efffff33",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
