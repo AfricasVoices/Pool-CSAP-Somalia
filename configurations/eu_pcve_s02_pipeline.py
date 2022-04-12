@@ -339,7 +339,43 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 ]
             ),
         ],
-        ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset")
+        ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset"),
+        traffic_labels=[
+            # s02e01
+            TrafficLabel(isoparse("2022-03-20T00:00+03:00"), isoparse("2022-03-20T16:30+03:00"), "s02e01 Sun, Promos (pre-ad)"),
+            TrafficLabel(isoparse("2022-03-20T16:30+03:00"), isoparse("2022-03-20T18:30+03:00"), "s02e01 Sun, Ad, Group A"),
+            TrafficLabel(isoparse("2022-03-20T18:30+03:00"), isoparse("2022-03-20T24:00+03:00"), "s02e01 Sun, Promos (post-ad)"),
+            TrafficLabel(isoparse("2022-03-21T00:00+03:00"), isoparse("2022-03-21T24:00+03:00"), "s02e01 Mon, Promos"),
+            TrafficLabel(isoparse("2022-03-22T00:00+03:00"), isoparse("2022-03-22T24:00+03:00"), "s02e01 Tue, Promos"),
+            TrafficLabel(isoparse("2022-03-23T00:00+03:00"), isoparse("2022-03-23T16:30+03:00"), "s02e01 Wed, None (pre-ad)"),
+            TrafficLabel(isoparse("2022-03-23T16:30+03:00"), isoparse("2022-03-23T18:30+03:00"), "s02e01 Wed, Ad, Group B"),
+            TrafficLabel(isoparse("2022-03-23T18:30+03:00"), isoparse("2022-03-23T24:00+03:00"), "s02e01 Wed, None (post-ad)"),
+            TrafficLabel(isoparse("2022-03-24T00:00+03:00"), isoparse("2022-03-24T24:00+03:00"), "s02e01 Thu, Shows"),
+            TrafficLabel(isoparse("2022-03-25T00:00+03:00"), isoparse("2022-03-25T24:00+03:00"), "s02e01 Fri, None"),
+            TrafficLabel(isoparse("2022-03-26T00:00+03:00"), isoparse("2022-03-26T24:00+03:00"), "s02e01 Sat, None"),
+
+            # s02e02
+            TrafficLabel(isoparse("2022-03-27T00:00+03:00"), isoparse("2022-03-27T24:00+03:00"), "s02e02 Sun, Promos"),
+            TrafficLabel(isoparse("2022-03-28T00:00+03:00"), isoparse("2022-03-28T24:00+03:00"), "s02e02 Mon, Promos"),
+            TrafficLabel(isoparse("2022-03-29T00:00+03:00"), isoparse("2022-03-29T24:00+03:00"), "s02e02 Tue, Promos"),
+            TrafficLabel(isoparse("2022-03-30T00:00+03:00"), isoparse("2022-03-30T16:30+03:00"), "s02e02 Wed, None (pre-ad)"),
+            TrafficLabel(isoparse("2022-03-30T16:30+03:00"), isoparse("2022-03-30T24:00+03:00"), "s02e02 Wed, Ad"),
+            TrafficLabel(isoparse("2022-03-31T00:00+03:00"), isoparse("2022-03-31T24:00+03:00"), "s02e02 Thu, Shows"),
+            TrafficLabel(isoparse("2022-04-01T00:00+03:00"), isoparse("2022-04-01T16:30+03:00"), "s02e02 Fri, None (pre-non-relevant-ad)"),
+            TrafficLabel(isoparse("2022-04-01T16:30+03:00"), isoparse("2022-04-01T18:30+03:00"), "s02e02 Fri, Ad, Non-Relevant"),
+            TrafficLabel(isoparse("2022-04-02T00:00+03:00"), isoparse("2022-04-02T24:00+03:00"), "s02e02 Sat, None"),
+
+            # s02e03
+            TrafficLabel(isoparse("2022-04-03T00:00+03:00"), isoparse("2022-04-03T24:00+03:00"), "s02e03 Sun, Promos"),
+            TrafficLabel(isoparse("2022-04-04T00:00+03:00"), isoparse("2022-04-04T24:00+03:00"), "s02e03 Mon, Promos"),
+            TrafficLabel(isoparse("2022-04-05T00:00+03:00"), isoparse("2022-04-05T24:00+03:00"), "s02e03 Tue, Promos"),
+            TrafficLabel(isoparse("2022-04-06T00:00+03:00"), isoparse("2022-04-06T16:40+03:00"), "s02e03 Wed, None (pre-ad)"),
+            TrafficLabel(isoparse("2022-04-06T16:40+03:00"), isoparse("2022-04-06T18:40+03:00"), "s02e03 Wed, Ad"),
+            TrafficLabel(isoparse("2022-04-07T00:00+03:00"), isoparse("2022-04-07T24:00+03:00"), "s02e03 Thu, Shows"),
+            TrafficLabel(isoparse("2022-04-08T00:00+03:00"), isoparse("2022-04-08T16:30+03:00"), "s02e03 Fri, None (pre-non-relevant-ad)"),
+            TrafficLabel(isoparse("2022-04-08T16:30+03:00"), isoparse("2022-04-08T18:30+03:00"), "s02e03 Fri, Ad, Non-Relevant"),
+            TrafficLabel(isoparse("2022-04-09T00:00+03:00"), isoparse("2022-04-09T24:00+03:00"), "s02e03 Sat, None"),
+        ]
     ),
     archive_configuration=ArchiveConfiguration(
         archive_upload_bucket="gs://pipeline-execution-backup-archive",
