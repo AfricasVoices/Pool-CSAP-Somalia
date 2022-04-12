@@ -160,6 +160,7 @@ if __name__ == "__main__":
     rapid_pro_messages.sort(key=lambda msg: msg.sent_on)
     unmatched_messages = []
     skipped_messages = []
+    matched_messages = []
     for rapid_pro_msg in rapid_pro_messages:
         rapid_pro_text = rapid_pro_msg.text
 
@@ -173,6 +174,7 @@ if __name__ == "__main__":
                     recovery_item["recovered_message"]["Message"] == rapid_pro_text and \
                     rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < timedelta(minutes=5):
                 recovery_item["rapid_pro_message"] = rapid_pro_msg
+                matched_messages.append(rapid_pro_msg)
                 break
         else:
             unmatched_messages.append(rapid_pro_msg)
@@ -202,6 +204,7 @@ if __name__ == "__main__":
                     recovery_item["recovered_message"]["Message"] == rapid_pro_text and \
                     rapid_pro_msg.sent_on - recovery_item["recovered_message"]["timestamp"] < timedelta(minutes=5):
                 recovery_item["rapid_pro_message"] = rapid_pro_msg
+                matched_messages.append(rapid_pro_msg)
                 break
         else:
             unmatched_messages.append(rapid_pro_msg)
@@ -227,6 +230,7 @@ if __name__ == "__main__":
                     })
 
                     recovery_item["rapid_pro_message"] = rapid_pro_msg
+                    matched_messages.append(rapid_pro_msg)
                     break
             else:
                 unmatched_messages.append(rapid_pro_msg)
@@ -235,6 +239,23 @@ if __name__ == "__main__":
              f"{len(unmatched_messages)} unmatched messages remain")
     log.info(f"Wrote the timestamp-based matches to {timestamp_matches_log_output_csv_path} for manual verification. " 
              f"Please check these carefully")
+
+    # Scanning remaining messages for possible duplicates
+    log.info(f"Searching remaining {len(unmatched_messages)} unmatched messages for duplicates...")
+    matched_messages_lut = {(msg.urn, msg.text): msg for msg in matched_messages}
+    rapid_pro_messages = unmatched_messages
+    unmatched_messages = []
+    for msg in rapid_pro_messages:
+        if (msg.urn, msg.text) in matched_messages_lut:
+            log.info(f"Found a message urn and text sent at {msg.sent_on}, that was already seen in a message sent "
+                     f"at {matched_messages_lut[(msg.urn, msg.text)].sent_on}")
+            skipped_messages.append(msg)
+        else:
+            unmatched_messages.append(msg)
+    # TODO: Write the duplicated messages to disk so we can use them to de-duplicate the data in the engagement db.
+    log.info(f"Attempted to find duplicates in unmatched messages: "
+             f"Found {len(rapid_pro_messages) - len(unmatched_messages)} messages that were duplicates, "
+             f"{len(unmatched_messages)} unmatched messages remain")
 
     if len(unmatched_messages) > 0:
         log.error(f"{len(unmatched_messages)} unmatched messages remain after attempting all automated matching "
