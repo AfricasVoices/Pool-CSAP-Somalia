@@ -72,7 +72,26 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 CSVDatasetConfiguration("eu_pcve_s02e02")
             ],
             timezone="Africa/Mogadishu"
-        )
+        ),
+        CSVSource(
+            # This source is taken from a dataset that covers the 27th-30th, but the data sent before 08:42 EAT on
+            # the 27th is missing, and the data sent after 16:00 EAT on the 30th has too many problems for the
+            # automated preprocessing script to handle, hence the first and last days here are only partial.
+            "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_03_27_05_42_Z_to_2022_03_30_13_00_Z_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s02e02", start_date=isoparse("2022-03-27T08:42:00+03:00"), end_date=isoparse("2022-03-30T16:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        ),
+        # TODO: Add data from 4pm EAT onwards on March 30th, which currently has too many issue to be processed
+        #       by the usual pre-processing script.
+        CSVSource(
+            "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_04_01_to_2022_04_02_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s02e02", start_date=isoparse("2022-04-01T00:00:00+03:00"), end_date=isoparse("2022-04-02T24:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        ),
     ],
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),

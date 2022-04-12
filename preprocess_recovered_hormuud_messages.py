@@ -198,6 +198,7 @@ if __name__ == "__main__":
         if re.compile("^\".*\"$").match(rapid_pro_text):
             rapid_pro_text = rapid_pro_text.replace("\"", "")  # strictly quoted text -> just the text
         rapid_pro_text = rapid_pro_text.encode("ascii", "replace").decode("ascii")  # non-ascii characters -> '?'
+        rapid_pro_text = rapid_pro_text.strip()
 
         for recovery_item in recovered_lut[rapid_pro_msg.urn]:
             if recovery_item["rapid_pro_message"] is None and \
