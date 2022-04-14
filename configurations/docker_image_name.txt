@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/test-pipeline-engagement-db:parse-ms
+ghcr.io/africasvoices/engagement-data-pipeline:v1.1.0
