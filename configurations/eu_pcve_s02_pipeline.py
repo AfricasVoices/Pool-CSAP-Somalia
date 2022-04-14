@@ -9,7 +9,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     description="Runs the EU-PCVE season 2 pipeline",
     engagement_database=EngagementDatabaseClientConfiguration(
         credentials_file_url="gs://avf-credentials/avf-engagement-databases-firebase-credentials-file.json",
-        database_path="engagement_databases/CSAP_Somalia"
+        database_path="engagement_databases/CSAP_Somalia_2"
     ),
     uuid_table=UUIDTableClientConfiguration(
         credentials_file_url="gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
