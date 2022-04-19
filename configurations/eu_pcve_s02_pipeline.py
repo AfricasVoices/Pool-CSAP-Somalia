@@ -199,6 +199,21 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset")
         )
     ),
+    test_participant_uuids=[
+        "avf-participant-uuid-45d15c2d-623c-4f89-bd91-7518147bf1dc",
+        "avf-participant-uuid-e8481c97-3797-40b8-a57f-8e396c5d3592",
+        "avf-participant-uuid-57ba3ccc-a6a6-44c8-8a69-6f951e69a6a3",
+        "avf-participant-uuid-dd8514ef-1b27-468b-8098-ec6a350cf9f4",
+        "avf-participant-uuid-2d36746f-d200-4160-866f-8f1de7f64294",
+        "avf-participant-uuid-48e91315-1f85-4a29-9e3e-b70bed3165a1",
+        "avf-participant-uuid-b8c44fb8-7159-409c-a6fd-74ded79695ef",
+        "avf-participant-uuid-045893fe-5cb0-4a6b-97b0-a3c68645cf71",
+        "avf-participant-uuid-8251b21b-0db9-4bd5-b23a-afeb74ae16ae",
+        "avf-participant-uuid-22c46bbe-5a87-49de-a0fc-ff30614b1321",
+        "avf-participant-uuid-33c7a5d8-0481-4685-9d54-2e1f471a9d78",
+        "avf-participant-uuid-522a793a-6080-4b49-bb99-147df70ef259",
+        "avf-participant-uuid-6b88506f-a8e2-4bb7-8d27-9154acd2ae60"
+    ],
     analysis=AnalysisConfiguration(
         google_drive_upload=GoogleDriveUploadConfiguration(
             credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
