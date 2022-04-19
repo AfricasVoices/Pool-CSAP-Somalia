@@ -87,6 +87,13 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         # TODO: Add data from 4pm EAT onwards on March 30th, which currently has too many issue to be processed
         #       by the usual pre-processing script.
         CSVSource(
+            "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_03_31_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s02e02", start_date=isoparse("2022-03-31T00:00:00+03:00"), end_date=isoparse("2022-03-31T24:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        ),
+        CSVSource(
             "gs://avf-project-datasets/2022/EU-PCVE-S02/recovered_hormuud_2022_04_01_to_2022_04_02_de_identified.csv",
             engagement_db_datasets=[
                 CSVDatasetConfiguration("eu_pcve_s02e02", start_date=isoparse("2022-04-01T00:00:00+03:00"), end_date=isoparse("2022-04-02T24:00:00+03:00"))
