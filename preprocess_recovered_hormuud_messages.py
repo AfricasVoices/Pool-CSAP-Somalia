@@ -110,6 +110,8 @@ if __name__ == "__main__":
     parser.add_argument("timestamp_matches_log_output_csv_path", metavar="timestamp-matches-log-output-csv-path",
                         help="File to log the matches made between the Rapid Pro and recovery datasets by timestamp, "
                              "for manual review and approval")
+    parser.add_argument("duplicates_output_csv_path", metavar="duplicates-output-csv-path",
+                        help="File to log the messages identified as duplicates to")
     parser.add_argument("output_csv_path", metavar="output-csv-path",
                         help="File to write the filtered, recovered data to, in a format ready for de-identification "
                              "and integration into the pipeline")
@@ -123,6 +125,7 @@ if __name__ == "__main__":
     end_date = isoparse(args.end_date)
     hormuud_csv_input_path = args.hormuud_csv_input_path
     timestamp_matches_log_output_csv_path = args.timestamp_matches_log_output_csv_path
+    duplicates_output_csv_path = args.duplicates_output_csv_path
     output_csv_path = args.output_csv_path
 
     # Define the maximum time difference we can observe between a message in rapid pro and in the recovery csv for it
@@ -231,18 +234,31 @@ if __name__ == "__main__":
     log.info(f"Searching remaining {len(unmatched_messages)} unmatched messages for duplicates...")
     matched_messages_lut = {(msg.urn, msg.text): msg for msg in matched_messages}
     rapid_pro_messages = unmatched_messages
+    duplicate_messages = []
     unmatched_messages = []
     for msg in rapid_pro_messages:
         if (msg.urn, msg.text) in matched_messages_lut:
             log.info(f"Found a message urn and text sent at {msg.sent_on}, that was already seen in a message sent "
                      f"at {matched_messages_lut[(msg.urn, msg.text)].sent_on}")
+            duplicate_messages.append(msg)
             skipped_messages.append(msg)
         else:
             unmatched_messages.append(msg)
-    # TODO: Write the duplicated messages to disk so we can use them to de-duplicate the data in the engagement db.
     log.info(f"Attempted to find duplicates in unmatched messages: "
              f"Found {len(rapid_pro_messages) - len(unmatched_messages)} messages that were duplicates, "
              f"{len(unmatched_messages)} unmatched messages remain")
+
+    # Write the duplicated messages to disk so we can use them to de-duplicate the data in the engagement db.
+    log.info(f"Exporting {len(duplicate_messages)} duplicate messages to {duplicates_output_csv_path}...")
+    with open(duplicates_output_csv_path, "w") as f:
+        writer = csv.DictWriter(f, fieldnames=["avf-participant-uuid", "text", "timestamp"])
+        writer.writeheader()
+        for msg in duplicate_messages:
+            writer.writerow({
+                "avf-participant-uuid": msg.urn,
+                "text": msg.text,
+                "timestamp": msg.sent_on
+            })
 
     # Finally, search by timestamp, and export these to a log file for manual review.
     # This covers all sorts of weird edge cases, mostly around Hormuud/Excel's handling of special characters.
