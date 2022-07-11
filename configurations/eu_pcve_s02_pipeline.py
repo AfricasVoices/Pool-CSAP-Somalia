@@ -128,7 +128,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                             coda_code_schemes_count=3
                         )
                     ],
-                    ws_code_string_value="eu_pcve_s02e01"
+                    ws_code_match_value="eu_pcve_s02e01"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02e02",
@@ -140,7 +140,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                             coda_code_schemes_count=3
                         )
                     ],
-                    ws_code_string_value="eu_pcve_s02e02"
+                    ws_code_match_value="eu_pcve_s02e02"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02e03",
@@ -152,7 +152,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                             coda_code_schemes_count=3
                         )
                     ],
-                    ws_code_string_value="eu_pcve_s02e03"
+                    ws_code_match_value="eu_pcve_s02e03"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02_closeout",
@@ -164,7 +164,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                             coda_code_schemes_count=3
                         )
                     ],
-                    ws_code_string_value="eu_pcve_s02_closeout"
+                    ws_code_match_value="eu_pcve_s02_closeout"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
@@ -184,7 +184,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/somalia_zone"),
                                                 auto_coder=None)
                     ],
-                    ws_code_string_value="location"
+                    ws_code_match_value="location"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_age",
@@ -193,7 +193,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/age"),
                                                 auto_coder=lambda text: str(somali.DemographicCleaner.clean_age_within_range(text))),
                     ],
-                    ws_code_string_value="age"
+                    ws_code_match_value="age"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_gender",
@@ -202,7 +202,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/gender"),
                                                 auto_coder=somali.DemographicCleaner.clean_gender)
                     ],
-                    ws_code_string_value="gender"
+                    ws_code_match_value="gender"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_household_language",
@@ -211,7 +211,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/household_language"),
                                                 auto_coder=None)
                     ],
-                    ws_code_string_value="household_language"
+                    ws_code_match_value="household_language"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_recently_displaced",
@@ -220,7 +220,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/recently_displaced"),
                                                 auto_coder=None)
                     ],
-                    ws_code_string_value="recently_displaced"
+                    ws_code_match_value="recently_displaced"
                 ),
             ],
             set_dataset_from_ws_string_value=True,
