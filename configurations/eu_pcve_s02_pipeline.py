@@ -122,7 +122,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02e01",
                     engagement_db_dataset="eu_pcve_s02e01",
                     code_scheme_configurations=[
-                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e01"), auto_coder=None)
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e01"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
                     ],
                     ws_code_string_value="eu_pcve_s02e01"
                 ),
@@ -130,7 +134,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02e02",
                     engagement_db_dataset="eu_pcve_s02e02",
                     code_scheme_configurations=[
-                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e02"), auto_coder=None)
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e02"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
                     ],
                     ws_code_string_value="eu_pcve_s02e02"
                 ),
@@ -138,7 +146,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02e03",
                     engagement_db_dataset="eu_pcve_s02e03",
                     code_scheme_configurations=[
-                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e03"), auto_coder=None)
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02e03"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
                     ],
                     ws_code_string_value="eu_pcve_s02e03"
                 ),
@@ -146,7 +158,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s02_closeout",
                     engagement_db_dataset="eu_pcve_s02_closeout",
                     code_scheme_configurations=[
-                        CodeSchemeConfiguration(code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02_closeout"), auto_coder=None)
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s02_closeout"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
                     ],
                     ws_code_string_value="eu_pcve_s02_closeout"
                 ),
@@ -155,23 +171,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     engagement_db_dataset="location",
                     code_scheme_configurations=[
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/mogadishu_sub_district"),
-                                                auto_coder=somali.DemographicCleaner.clean_mogadishu_sub_district,
-                                                coda_code_schemes_count=1),
+                                                auto_coder=somali.DemographicCleaner.clean_mogadishu_sub_district),
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/somalia_district"),
                                                 auto_coder=lambda text:
                                                 somali.DemographicCleaner.clean_somalia_district(text)
                                                 if somali.DemographicCleaner.clean_mogadishu_sub_district == Codes.NOT_CODED
-                                                else Codes.NOT_CODED,
-                                                coda_code_schemes_count=1),
+                                                else Codes.NOT_CODED),
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/somalia_region"),
-                                                auto_coder=None,
-                                                coda_code_schemes_count=1),
+                                                auto_coder=None),
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/somalia_state"),
-                                                auto_coder=None,
-                                                coda_code_schemes_count=1),
+                                                auto_coder=None),
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/somalia_zone"),
-                                                auto_coder=None,
-                                                coda_code_schemes_count=1)
+                                                auto_coder=None)
                     ],
                     ws_code_string_value="location"
                 ),
@@ -180,8 +191,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     engagement_db_dataset="age",
                     code_scheme_configurations=[
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/age"),
-                                                auto_coder=lambda text: str(somali.DemographicCleaner.clean_age_within_range(text)),
-                                                coda_code_schemes_count=1),
+                                                auto_coder=lambda text: str(somali.DemographicCleaner.clean_age_within_range(text))),
                     ],
                     ws_code_string_value="age"
                 ),
@@ -190,8 +200,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     engagement_db_dataset="gender",
                     code_scheme_configurations=[
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/gender"),
-                                                auto_coder=somali.DemographicCleaner.clean_gender,
-                                                coda_code_schemes_count=1)
+                                                auto_coder=somali.DemographicCleaner.clean_gender)
                     ],
                     ws_code_string_value="gender"
                 ),
@@ -200,8 +209,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     engagement_db_dataset="household_language",
                     code_scheme_configurations=[
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/household_language"),
-                                                auto_coder=None,
-                                                coda_code_schemes_count=1)
+                                                auto_coder=None)
                     ],
                     ws_code_string_value="household_language"
                 ),
@@ -210,8 +218,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     engagement_db_dataset="recently_displaced",
                     code_scheme_configurations=[
                         CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/recently_displaced"),
-                                                auto_coder=None,
-                                                coda_code_schemes_count=1)
+                                                auto_coder=None)
                     ],
                     ws_code_string_value="recently_displaced"
                 ),

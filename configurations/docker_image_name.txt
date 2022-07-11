@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/engagement-data-pipeline:exclude-messages
+ghcr.io/africasvoices/engagement-data-pipeline:v1.2.0
