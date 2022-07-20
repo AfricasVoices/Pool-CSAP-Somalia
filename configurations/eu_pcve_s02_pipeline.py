@@ -247,7 +247,6 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
             drive_dir="eu_pcve_analysis_outputs/s02"
         ),
-        messages_to_exclude_csv_url="gs://avf-project-datasets/2022/EU-PCVE-S02/duplicates.csv",
         dataset_configurations=[
             AnalysisDatasetConfiguration(
                 engagement_db_datasets=["eu_pcve_s02e01"],
