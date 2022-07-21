@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/engagement-data-pipeline:optional-weekly-advert-contact-field
+ghcr.io/africasvoices/engagement-data-pipeline:build-2712133902-attempt-1
