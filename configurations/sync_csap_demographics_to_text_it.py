@@ -19,6 +19,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     operations_dashboard=OperationsDashboardConfiguration(
         credentials_file_url="gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json",
     ),
+    rapid_pro_sources=[],
     rapid_pro_target=RapidProTarget(
         rapid_pro=RapidProClientConfiguration(
             domain="textit.com",
