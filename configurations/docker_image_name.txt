@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/engagement-data-pipeline:build-2712133902-attempt-1
+ghcr.io/africasvoices/engagement-data-pipeline:v2.1.0
