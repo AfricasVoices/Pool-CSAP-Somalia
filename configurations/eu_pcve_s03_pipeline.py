@@ -29,14 +29,13 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 flow_result_configurations=[
                     FlowResultConfiguration("csap_eu_pcve_s03e01_activation", "rqa_eu_pcve_s03e01", "eu_pcve_s03e01"),
 
-                    # (Demographics use the same flow as seasons 1+2)
-                    # TODO: Handle revised recently_displaced question text, if it changes, and the new question
-                    #       on disabilities.
+                    # (Demographics use the same flow as seasons 1+2, with a new disability quesiton)
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "gender", "gender"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "age", "age"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "recently_displaced", "recently_displaced"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "hh_language", "household_language"),
+                    FlowResultConfiguration("csap_eu_pcve_demog", "disability", "disability"),
                 ]
             )
         )
@@ -113,6 +112,15 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                                                 auto_coder=None)
                     ],
                     ws_code_match_value="recently_displaced"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="CSAP_disability",
+                    engagement_db_dataset="disability",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(code_scheme=load_code_scheme("demographics/disability"),
+                                                auto_coder=None)
+                    ],
+                    ws_code_match_value="disability"
                 ),
             ],
             set_dataset_from_ws_string_value=True,
@@ -248,6 +256,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     CodingConfiguration(
                         code_scheme=load_code_scheme("demographics/household_language"),
                         analysis_dataset="household_language"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["disability"],
+                dataset_type=DatasetTypes.DEMOGRAPHIC,
+                raw_dataset="disability",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("demographics/disability"),
+                        analysis_dataset="disability"
                     )
                 ]
             ),
