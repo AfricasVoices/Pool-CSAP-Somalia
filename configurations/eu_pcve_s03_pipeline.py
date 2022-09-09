@@ -60,8 +60,8 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             write_mode=WriteModes.CONCATENATE_TEXTS,
             allow_clearing_fields=True,
             weekly_advert_contact_field=ContactField(
-                key="eu_pcve_s03_weekly_advert",
-                label="eu pcve weekly advert"
+                key="eu_pcve_s03_weekly_advert_group",
+                label="eu pcve weekly advert group"
             ),
             sync_advert_contacts=True,
         )
