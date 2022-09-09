@@ -15,6 +15,17 @@
       ]
     },
     {
+      "CodeID": "code-64286f4c",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s03e02",
+      "StringValue": "eu_pcve_s03e02",
+      "NumericValue": 76,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s03e02"
+      ]
+    },
+    {
       "CodeID": "code-652137c5",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s01e01",
