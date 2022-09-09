@@ -40,6 +40,32 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             )
         )
     ],
+    rapid_pro_target=RapidProTarget(
+        rapid_pro=RapidProClientConfiguration(
+            domain="textit.com",
+            token_file_url="gs://avf-credentials/csap-text-it-token.txt"
+        ),
+        sync_config=EngagementDBToRapidProConfiguration(
+            consent_withdrawn_dataset=DatasetConfiguration(
+                engagement_db_datasets=[
+                    "eu_pcve_s02e01", "eu_pcve_s02e02", "eu_pcve_s02e03", "eu_pcve_s02_closeout",
+                    "eu_pcve_s03e01",
+                    "location", "age", "gender", "household_language", "recently_displaced", "disability"
+                ],
+                rapid_pro_contact_field=ContactField(
+                    key="engagement_db_consent_withdrawn",
+                    label="Engagement DB Consent Withdrawn"
+                )
+            ),
+            write_mode=WriteModes.CONCATENATE_TEXTS,
+            allow_clearing_fields=True,
+            weekly_advert_contact_field=ContactField(
+                key="eu_pcve_s03_weekly_advert_group",
+                label="eu pcve weekly advert group"
+            ),
+            sync_advert_contacts=True,
+        )
+    ),
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
