@@ -3,7 +3,28 @@
   "Name": "Disability",
   "Version": "0.0.0.1",
   "Codes": [
-
+{
+      "CodeID": "code-e1594468",
+      "CodeType": "Normal",
+      "DisplayText": "yes",
+      "NumericValue": 1,
+      "StringValue": "yes",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "yes"
+      ]
+    },
+    {
+      "CodeID": "code-96932eee",
+      "CodeType": "Normal",
+      "DisplayText": "no",
+      "NumericValue": 2,
+      "StringValue": "no",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "no"
+      ]
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
