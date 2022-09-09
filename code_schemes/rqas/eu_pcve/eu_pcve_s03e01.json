@@ -3,7 +3,70 @@
   "Name": "RQA S03E01",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-3b2a0443",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 1,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-ceafb583",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d00995a7",
+      "CodeType": "Normal",
+      "DisplayText": "job creation",
+      "NumericValue": 3,
+      "StringValue": "job_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0df31f76",
+      "CodeType": "Normal",
+      "DisplayText": "stand against ve",
+      "NumericValue": 4,
+      "StringValue": "stand_against_ve",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0af47607",
+      "CodeType": "Normal",
+      "DisplayText": "youth potential",
+      "NumericValue": 5,
+      "StringValue": "youth_potential",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-05579bed",
+      "CodeType": "Normal",
+      "DisplayText": "rule of law",
+      "NumericValue": 6,
+      "StringValue": "rule_of_law",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c84efc5a",
+      "CodeType": "Normal",
+      "DisplayText": "condemning ve",
+      "NumericValue": 7,
+      "StringValue": "condemning_ve",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-33f33ea6",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
