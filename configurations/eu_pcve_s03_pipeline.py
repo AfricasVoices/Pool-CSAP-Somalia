@@ -50,7 +50,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             consent_withdrawn_dataset=DatasetConfiguration(
                 engagement_db_datasets=[
                     "eu_pcve_s02e01", "eu_pcve_s02e02", "eu_pcve_s02e03", "eu_pcve_s02_closeout",
-                    "eu_pcve_s03e01",
+                    "eu_pcve_s03e01", "eu_pcve_s03e02",
                     "location", "age", "gender", "household_language", "recently_displaced", "disability"
                 ],
                 rapid_pro_contact_field=ContactField(
