@@ -182,10 +182,10 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         "avf-participant-uuid-6b88506f-a8e2-4bb7-8d27-9154acd2ae60"
     ],
     analysis=AnalysisConfiguration(
-        google_drive_upload=GoogleDriveUploadConfiguration(
-            credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-            drive_dir="eu_pcve_analysis_outputs/s03"
-        ),
+        # google_drive_upload=GoogleDriveUploadConfiguration(
+        #     credentials_file_url="gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
+        #     drive_dir="eu_pcve_analysis_outputs/s03"
+        # ),
         dataset_configurations=[
             AnalysisDatasetConfiguration(
                 engagement_db_datasets=["eu_pcve_s03e01"],
@@ -208,6 +208,10 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         analysis_dataset="s03e02"
                     )
                 ],
+                rapid_pro_non_relevant_field=ContactField(
+                    key="eu_pcve_s03e02_non_relevant_contact",
+                    label="eu pcve s03e02 non-relevant contact"
+                )
             ),
             OperatorDatasetConfiguration(
                 raw_dataset="operator_raw",
