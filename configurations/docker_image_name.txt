@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/engagement-data-pipeline:fix-uuid-prefix-check
+ghcr.io/africasvoices/engagement-data-pipeline:fix-cache-reset-in-rapidpro-eng-db-sync
