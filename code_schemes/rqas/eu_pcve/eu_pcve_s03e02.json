@@ -14,9 +14,9 @@
     {
       "CodeID": "code-5b92a758",
       "CodeType": "Normal",
-      "DisplayText": "encouragement and support",
+      "DisplayText": "general encouragement and support",
       "NumericValue": 2,
-      "StringValue": "encouragement_and_support",
+      "StringValue": "general_encouragement_and_support",
       "VisibleInCoda": true
     },
     {
@@ -38,9 +38,9 @@
     {
       "CodeID": "code-61825903",
       "CodeType": "Normal",
-      "DisplayText": "youth are important",
+      "DisplayText": "youth recognition",
       "NumericValue": 5,
-      "StringValue": "youth_are_important",
+      "StringValue": "youth_recognition",
       "VisibleInCoda": true
     },
     {
