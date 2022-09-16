@@ -29,6 +29,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 flow_result_configurations=[
                     FlowResultConfiguration("csap_eu_pcve_s03e01_activation", "rqa_eu_pcve_s03e01", "eu_pcve_s03e01"),
                     FlowResultConfiguration("csap_eu_pcve_s03e02_activation", "rqa_eu_pcve_s03e02", "eu_pcve_s03e02"),
+                    FlowResultConfiguration("csap_eu_pcve_s03e03_activation", "rqa_eu_pcve_s03e03", "eu_pcve_s03e03"),
 
                     # (Demographics use the same flow as seasons 1+2, with a new disability quesiton)
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
@@ -50,7 +51,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             consent_withdrawn_dataset=DatasetConfiguration(
                 engagement_db_datasets=[
                     "eu_pcve_s02e01", "eu_pcve_s02e02", "eu_pcve_s02e03", "eu_pcve_s02_closeout",
-                    "eu_pcve_s03e01", "eu_pcve_s03e02",
+                    "eu_pcve_s03e01", "eu_pcve_s03e02", "eu_pcve_s03e03",
                     "location", "age", "gender", "household_language", "recently_displaced", "disability"
                 ],
                 rapid_pro_contact_field=ContactField(
@@ -95,6 +96,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         )
                     ],
                     ws_code_match_value="eu_pcve_s03e02"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s03e03",
+                    engagement_db_dataset="eu_pcve_s03e03",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s03e03"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s03e03"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
@@ -206,6 +219,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     CodingConfiguration(
                         code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s03e02"),
                         analysis_dataset="s03e02"
+                    )
+                ],
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s03e03"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s03e03_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s03e03"),
+                        analysis_dataset="s03e03"
                     )
                 ],
             ),
