@@ -3,7 +3,54 @@
   "Name": "RQA S03E02",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-bac9fe2b",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 1,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5b92a758",
+      "CodeType": "Normal",
+      "DisplayText": "general encouragement and support",
+      "NumericValue": 2,
+      "StringValue": "general_encouragement_and_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d2b46454",
+      "CodeType": "Normal",
+      "DisplayText": "create awareness",
+      "NumericValue": 3,
+      "StringValue": "create_awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-074a8070",
+      "CodeType": "Normal",
+      "DisplayText": "create job opportunities",
+      "NumericValue": 4,
+      "StringValue": "create_job_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-61825903",
+      "CodeType": "Normal",
+      "DisplayText": "youth recognition",
+      "NumericValue": 5,
+      "StringValue": "youth_recognition",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5e69d102",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
