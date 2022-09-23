@@ -3,7 +3,70 @@
   "Name": "RQA S03E03",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-e4807faf",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 1,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-99794b5c",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0fbed240",
+      "CodeType": "Normal",
+      "DisplayText": "general encouragement and support",
+      "NumericValue": 3,
+      "StringValue": "general_encouragement_and_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0d6cbe75",
+      "CodeType": "Normal",
+      "DisplayText": "honesty and trust",
+      "NumericValue": 4,
+      "StringValue": "honesty_and_trust",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5226662b",
+      "CodeType": "Normal",
+      "DisplayText": "create job opportunities",
+      "NumericValue": 5,
+      "StringValue": "create_job_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9c4ce2cd",
+      "CodeType": "Normal",
+      "DisplayText": "practising religion",
+      "NumericValue": 6,
+      "StringValue": "practising_religion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-821f83d5",
+      "CodeType": "Normal",
+      "DisplayText": "general importance",
+      "NumericValue": 7,
+      "StringValue": "general_importance",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d117cb9b",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
