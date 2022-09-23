@@ -46,17 +46,9 @@
     {
       "CodeID": "code-9c4ce2cd",
       "CodeType": "Normal",
-      "DisplayText": "practising religion",
+      "DisplayText": "practising the religion",
       "NumericValue": 6,
-      "StringValue": "practising_religion",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-821f83d5",
-      "CodeType": "Normal",
-      "DisplayText": "general importance",
-      "NumericValue": 7,
-      "StringValue": "general_importance",
+      "StringValue": "practising_the_religion",
       "VisibleInCoda": true
     },
     {
