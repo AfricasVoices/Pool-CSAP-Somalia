@@ -31,6 +31,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     FlowResultConfiguration("csap_eu_pcve_s03e02_activation", "rqa_eu_pcve_s03e02", "eu_pcve_s03e02"),
                     FlowResultConfiguration("csap_eu_pcve_s03e03_activation", "rqa_eu_pcve_s03e03", "eu_pcve_s03e03"),
 
+                    # The s03e02 sms ad sent people to the s01e02 activation flow by mistake.
+                    # Fetch the recent data from that flow and include it in the eu_pcve_s03e02 dataset too.
+                    FlowResultConfiguration("csap_eu_pcve_s01e02_activation", "rqa_eu_pcve_s01e02", "eu_pcve_s03e02",
+                                            created_after_inclusive=isoparse("2022-09-01T00:00+03:00")),
+
                     # (Demographics use the same flow as seasons 1+2, with a new disability quesiton)
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "gender", "gender"),
