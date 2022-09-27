@@ -37,6 +37,17 @@
       ]
     },
     {
+      "CodeID": "code-dffaf55b",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s03 closeout",
+      "StringValue": "eu_pcve_s03_closeout",
+      "NumericValue": 79,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s03_closeout"
+      ]
+    },
+    {
       "CodeID": "code-652137c5",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s01e01",
