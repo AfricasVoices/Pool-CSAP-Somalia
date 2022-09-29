@@ -30,7 +30,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     FlowResultConfiguration("csap_eu_pcve_s03e01_activation", "rqa_eu_pcve_s03e01", "eu_pcve_s03e01"),
                     FlowResultConfiguration("csap_eu_pcve_s03e02_activation", "rqa_eu_pcve_s03e02", "eu_pcve_s03e02"),
                     FlowResultConfiguration("csap_eu_pcve_s03e03_activation", "rqa_eu_pcve_s03e03", "eu_pcve_s03e03"),
-                    FlowResultConfiguration("csap_eu_pcve_s03_closeout_activation", "rqa_eu_pcve_s03_closeout", "eu_pcve_s03_closeout"),
+                    FlowResultConfiguration("csap_eu_pcve_s03_closeout_activation", "eu_pcve_s03_closeout", "eu_pcve_s03_closeout"),
 
                     # The s03e02 sms ad sent people to the s01e02 activation flow by mistake.
                     # Fetch the recent data from that flow and include it in the eu_pcve_s03e02 dataset too.
