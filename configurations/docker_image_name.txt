@@ -1,1 +1,1 @@
-ghcr.io/africasvoices/engagement-data-pipeline:flow-time-range-filter
+ghcr.io/africasvoices/engagement-data-pipeline:v2.2.0
