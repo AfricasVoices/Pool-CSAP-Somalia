@@ -66,9 +66,14 @@ def get_incoming_hormuud_messages_from_recovery_csv(csv_path,
                 datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S.%f")
             )
         except ValueError:
-            msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
-                datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S")
-            )
+            try:
+                msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
+                    datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S")
+                )
+            except ValueError:
+                msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
+                    datetime.strptime(msg["ReceivedOn"], "%Y-%m-%d %H:%M:%S")
+                )
 
     if received_after_inclusive is not None:
         log.info(f"Filtering out messages sent before {received_after_inclusive}...")
