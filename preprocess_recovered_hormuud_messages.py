@@ -66,9 +66,14 @@ def get_incoming_hormuud_messages_from_recovery_csv(csv_path,
                 datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S.%f")
             )
         except ValueError:
-            msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
-                datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S")
-            )
+            try:
+                msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
+                    datetime.strptime(msg["ReceivedOn"], "%d/%m/%Y %H:%M:%S")
+                )
+            except ValueError:
+                msg["timestamp"] = pytz.timezone("Africa/Mogadishu").localize(
+                    datetime.strptime(msg["ReceivedOn"], "%Y-%m-%d %H:%M:%S")
+                )
 
     if received_after_inclusive is not None:
         log.info(f"Filtering out messages sent before {received_after_inclusive}...")
@@ -130,16 +135,23 @@ if __name__ == "__main__":
 
     # Define the maximum time difference we can observe between a message in rapid pro and in the recovery csv for it
     # to count as a match.
-    max_time_delta = timedelta(minutes=5)
-    if start_date >= isoparse("2022-04-03T00:00+03:00"):
-        # Since the April 3rd, when the short code was "fixed", we've been experiencing a longer lag.
-        # If processing data on or since that date, use a 7 minute timedelta when searching rather than 5.
-        # (We leave the old 5 minute timedelta for older dates so that this script will still give consistent results
-        #  for exports made previously)
+    if end_date < isoparse("2022-04-03T00:00+03:00"):
+        # During Pool-CSAP-Somalia projects that took place before April 3rd, the realtime connection was extremely
+        # unreliable (typical message loss rate was 50%), but the delay was typically about 4 minutes, and all
+        # less than 5.
+        max_time_delta = timedelta(minutes=5)
+    elif start_date >= isoparse("2022-04-03T00:00+03:00") and end_date < isoparse("2022-09-01T00:00+03:00"):
+        # When the realtime connection was improved from April 3rd 2022, message loss rate decreased to 1-2% but
+        # the maximum delay slightly increased. Use 7 minutes for messages received since that date.
         max_time_delta = timedelta(minutes=7)
+    elif start_date >= isoparse("2022-09-01T00:00+03:00"):
+        # Since at least September 1st 2022 (and possibly earlier, when there were no projects running on the short
+        # code), loss-rate remains at ~2% but the maximum delay has increased significantly in a small number of cases.
+        max_time_delta = timedelta(minutes=110)
     else:
-        # Prevent accidents in case this script is reused across the time delta transition.
-        assert end_date < isoparse("2022-04-03T00:00+03:00")
+        assert False, "Unsupported data-range due to data crossing a max_time_delta definition boundary. " \
+                      "Either check the dates, update the date-ranges in the source code, or break the recovery " \
+                      "dataset into a chunks for each supported time range."
     log.info(f"Using maximum message time delta of {max_time_delta}")
 
     # Get messages from Rapid Pro and from the recovery csv
