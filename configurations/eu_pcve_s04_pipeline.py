@@ -275,6 +275,6 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     ),
     archive_configuration=ArchiveConfiguration(
         archive_upload_bucket="gs://pipeline-execution-backup-archive",
-        bucket_dir_path="2022/EU-PCVE-S04"
+        bucket_dir_path="2023/EU-PCVE-S04"
     )
 )
