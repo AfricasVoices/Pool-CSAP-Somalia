@@ -48,6 +48,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             )
         )
     ],
+    csv_sources=[
+        CSVSource(
+            "gs://avf-project-datasets/2022/EU-PCVE-S03/recovered_hormuud_2022_09_de_identified.csv",
+            engagement_db_datasets=[
+                CSVDatasetConfiguration("eu_pcve_s03e01", start_date=isoparse("2022-09-04T00:00:00+03:00"), end_date=isoparse("2022-09-10T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s03e02", start_date=isoparse("2022-09-11T00:00:00+03:00"), end_date=isoparse("2022-09-17T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s03e03", start_date=isoparse("2022-09-18T00:00:00+03:00"), end_date=isoparse("2022-09-24T24:00:00+03:00")),
+                CSVDatasetConfiguration("eu_pcve_s03_closeout", start_date=isoparse("2022-09-25T00:00:00+03:00"), end_date=isoparse("2022-09-30T24:00:00+03:00"))
+            ],
+            timezone="Africa/Mogadishu"
+        )
+    ],
     rapid_pro_target=RapidProTarget(
         rapid_pro=RapidProClientConfiguration(
             domain="textit.com",
