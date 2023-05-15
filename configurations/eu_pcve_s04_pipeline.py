@@ -320,6 +320,19 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             ),
         ],
         ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset"),
+        traffic_labels=[
+            TrafficLabel(isoparse("2023-05-06T00:00+03:00"), isoparse("2023-05-07T24:00+03:00"), "E01 Promos"),
+            TrafficLabel(isoparse("2023-05-08T00:00+03:00"), isoparse("2023-05-08T17:10+03:00"), "E01 Monday Before Advert"),
+            TrafficLabel(isoparse("2023-05-08T17:10+03:00"), isoparse("2023-05-08T24:00+03:00"), "E01 Advert"),
+            TrafficLabel(isoparse("2023-05-09T00:00+03:00"), isoparse("2023-05-09T24:00+03:00"), "E01 Shows"),
+            TrafficLabel(isoparse("2023-05-10T00:00+03:00"), isoparse("2023-05-12T24:00+03:00"), "E01 Other"),
+
+            TrafficLabel(isoparse("2023-05-13T00:00+03:00"), isoparse("2023-05-14T24:00+03:00"), "E02 Promos"),
+            TrafficLabel(isoparse("2023-05-15T00:00+03:00"), isoparse("2023-05-15T17:35+03:00"), "E02 Monday Before Advert"),
+            TrafficLabel(isoparse("2023-05-15T17:35+03:00"), isoparse("2023-05-15T24:00+03:00"), "E02 Advert"),
+            TrafficLabel(isoparse("2023-05-16T00:00+03:00"), isoparse("2023-05-16T24:00+03:00"), "E02 Shows"),
+            TrafficLabel(isoparse("2023-05-17T00:00+03:00"), isoparse("2023-05-19T24:00+03:00"), "E02 Other"),
+        ]
     ),
     archive_configuration=ArchiveConfiguration(
         archive_upload_bucket="gs://pipeline-execution-backup-archive",
