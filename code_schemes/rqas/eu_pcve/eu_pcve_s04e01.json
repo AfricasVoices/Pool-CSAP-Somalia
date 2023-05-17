@@ -3,7 +3,86 @@
   "Name": "RQA S04E01",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-e1b5777f",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 1,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8eeb6a2a",
+      "CodeType": "Normal",
+      "DisplayText": "women's quota",
+      "NumericValue": 2,
+      "StringValue": "womens_quota",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0d525ccb",
+      "CodeType": "Normal",
+      "DisplayText": "public encouragement",
+      "NumericValue": 3,
+      "StringValue": "public_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1dd1ee26",
+      "CodeType": "Normal",
+      "DisplayText": "dialogue and consultation",
+      "NumericValue": 4,
+      "StringValue": "dialogue_and_consultation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9f72fe52",
+      "CodeType": "Normal",
+      "DisplayText": "general support for women's inclusion",
+      "NumericValue": 5,
+      "StringValue": "general_support_for_womens_inclusion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6bd96559",
+      "CodeType": "Normal",
+      "DisplayText": "through justice and rule of law",
+      "NumericValue": 6,
+      "StringValue": "through_justice_and_rule_of_law",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-67f6ec30",
+      "CodeType": "Normal",
+      "DisplayText": "educate girls",
+      "NumericValue": 7,
+      "StringValue": "educate_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f18a91b0",
+      "CodeType": "Normal",
+      "DisplayText": "women should not participate in politics",
+      "NumericValue": 8,
+      "StringValue": "women_should_not_participate_in_politics",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f7e97fff",
+      "CodeType": "Normal",
+      "DisplayText": "promote positive cultural change",
+      "NumericValue": 9,
+      "StringValue": "promote_positive_cultural_change",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2cd1f6f2",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 10,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
