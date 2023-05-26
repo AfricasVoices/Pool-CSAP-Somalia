@@ -3,7 +3,86 @@
   "Name": "RQA S04E03",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-f816a85d",
+      "CodeType": "Normal",
+      "DisplayText": "promote women's rights",
+      "NumericValue": 1,
+      "StringValue": "promote_womens_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-710b76f6",
+      "CodeType": "Normal",
+      "DisplayText": "provide financial investment",
+      "NumericValue": 2,
+      "StringValue": "provide_financial_investment",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3a446253",
+      "CodeType": "Normal",
+      "DisplayText": "provide skills training",
+      "NumericValue": 3,
+      "StringValue": "provide_skills_training",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-7b54b844",
+      "CodeType": "Normal",
+      "DisplayText": "include women in decision making processes",
+      "NumericValue": 4,
+      "StringValue": "include_women_in_decision_making_processes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-80641323",
+      "CodeType": "Normal",
+      "DisplayText": "support from leaders",
+      "NumericValue": 5,
+      "StringValue": "support_from_leaders",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-42dba7e1",
+      "CodeType": "Normal",
+      "DisplayText": "creating job and business opportunities",
+      "NumericValue": 6,
+      "StringValue": "creating_job_and_business_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4f23207e",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 7,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-62f4cae2",
+      "CodeType": "Normal",
+      "DisplayText": "construct markets for women",
+      "NumericValue": 8,
+      "StringValue": "construct_markets_for_women",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-549c77f4",
+      "CodeType": "Normal",
+      "DisplayText": "provide education",
+      "NumericValue": 9,
+      "StringValue": "provide_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-42f7c49a",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 10,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
