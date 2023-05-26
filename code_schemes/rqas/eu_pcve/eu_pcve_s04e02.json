@@ -3,7 +3,70 @@
   "Name": "RQA S04E02",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-0e4c137a",
+      "CodeType": "Normal",
+      "DisplayText": "constructing more schools",
+      "NumericValue": 1,
+      "StringValue": "constructing_more_schools",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-655db371",
+      "CodeType": "Normal",
+      "DisplayText": "make education free and accessible",
+      "NumericValue": 2,
+      "StringValue": "make_education_free_and_accessible",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a0c5aa78",
+      "CodeType": "Normal",
+      "DisplayText": "justice/fairness in education",
+      "NumericValue": 3,
+      "StringValue": "justice_or_fairness_in_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-35334917",
+      "CodeType": "Normal",
+      "DisplayText": "improve quality of education",
+      "NumericValue": 4,
+      "StringValue": "improve_quality_of_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-351e8b3f",
+      "CodeType": "Normal",
+      "DisplayText": "support from leaders",
+      "NumericValue": 5,
+      "StringValue": "support_from_leaders",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-7782d072",
+      "CodeType": "Normal",
+      "DisplayText": "curriculum and policy reform",
+      "NumericValue": 6,
+      "StringValue": "curriculum_and_policy_reform",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a7acb814",
+      "CodeType": "Normal",
+      "DisplayText": "ensure women's security",
+      "NumericValue": 7,
+      "StringValue": "ensure_womens_security",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-52f30c6a",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
