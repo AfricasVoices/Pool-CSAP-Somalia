@@ -30,6 +30,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     FlowResultConfiguration("csap_eu_pcve_s04e01_activation", "rqa_eu_pcve_s04e01", "eu_pcve_s04e01"),
                     FlowResultConfiguration("csap_eu_pcve_s04e02_activation", "rqa_eu_pcve_s04e02", "eu_pcve_s04e02"),
                     FlowResultConfiguration("csap_eu_pcve_s04e03_activation", "rqa_eu_pcve_s04e03", "eu_pcve_s04e03"),
+                    FlowResultConfiguration("csap_eu_pcve_s04_closeout_activation", "eu_pcve_s04_closeout", "eu_pcve_s04_closeout"),
 
                     # (Demographics use the same flow as seasons 1+2+3 (with disability asked since e03))
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
@@ -82,6 +83,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         )
                     ],
                     ws_code_match_value="eu_pcve_s04e03"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s04_closeout",
+                    engagement_db_dataset="eu_pcve_s04_closeout",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s04_closeout"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s04_closeout"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
@@ -204,6 +217,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     CodingConfiguration(
                         code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s04e03"),
                         analysis_dataset="s04e03"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s04_closeout"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s04_closeout_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s04_closeout"),
+                        analysis_dataset="s04_closeout"
                     )
                 ]
             ),
