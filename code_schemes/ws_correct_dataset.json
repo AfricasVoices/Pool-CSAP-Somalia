@@ -37,6 +37,17 @@
       ]
     },
     {
+      "CodeID": "code-bac24bfe",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s04 closeout",
+      "StringValue": "eu_pcve_s04_closeout",
+      "NumericValue": 83,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s04_closeout"
+      ]
+    },
+    {
       "CodeID": "code-652137c5",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s01e01",
