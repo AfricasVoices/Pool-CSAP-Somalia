@@ -346,16 +346,24 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         ws_correct_dataset_code_scheme=load_code_scheme("ws_correct_dataset"),
         traffic_labels=[
             TrafficLabel(isoparse("2023-05-06T00:00+03:00"), isoparse("2023-05-07T24:00+03:00"), "E01 Promos"),
-            TrafficLabel(isoparse("2023-05-08T00:00+03:00"), isoparse("2023-05-08T17:10+03:00"), "E01 Monday Before Advert"),
+            TrafficLabel(isoparse("2023-05-08T00:00+03:00"), isoparse("2023-05-08T17:10+03:00"), "E01 Monday, Before Advert"),
             TrafficLabel(isoparse("2023-05-08T17:10+03:00"), isoparse("2023-05-08T24:00+03:00"), "E01 Advert"),
             TrafficLabel(isoparse("2023-05-09T00:00+03:00"), isoparse("2023-05-09T24:00+03:00"), "E01 Shows"),
             TrafficLabel(isoparse("2023-05-10T00:00+03:00"), isoparse("2023-05-12T24:00+03:00"), "E01 Other"),
 
             TrafficLabel(isoparse("2023-05-13T00:00+03:00"), isoparse("2023-05-14T24:00+03:00"), "E02 Promos"),
-            TrafficLabel(isoparse("2023-05-15T00:00+03:00"), isoparse("2023-05-15T17:35+03:00"), "E02 Monday Before Advert"),
+            TrafficLabel(isoparse("2023-05-15T00:00+03:00"), isoparse("2023-05-15T17:35+03:00"), "E02 Monday, Before Advert"),
             TrafficLabel(isoparse("2023-05-15T17:35+03:00"), isoparse("2023-05-15T24:00+03:00"), "E02 Advert"),
             TrafficLabel(isoparse("2023-05-16T00:00+03:00"), isoparse("2023-05-16T24:00+03:00"), "E02 Shows"),
             TrafficLabel(isoparse("2023-05-17T00:00+03:00"), isoparse("2023-05-19T24:00+03:00"), "E02 Other"),
+
+            TrafficLabel(isoparse("2023-05-20T00:00+03:00"), isoparse("2023-05-21T24:00+03:00"), "E03 Promos"),
+            TrafficLabel(isoparse("2023-05-22T00:00+03:00"), isoparse("2023-05-22T16:30+03:00"), "E03 Monday, Before Advert"),
+            TrafficLabel(isoparse("2023-05-22T16:30+03:00"), isoparse("2023-05-22T24:00+03:00"), "E03 Advert"),
+            TrafficLabel(isoparse("2023-05-23T00:00+03:00"), isoparse("2023-05-23T24:00+03:00"), "E03 Shows"),
+            TrafficLabel(isoparse("2023-05-24T00:00+03:00"), isoparse("2023-05-28T24:00+03:00"), "E03 Other"),
+
+            TrafficLabel(isoparse("2023-05-29T16:30+03:00"), isoparse("2023-06-02T24:00+03:00"), "Closeout")
         ]
     ),
     archive_configuration=ArchiveConfiguration(
