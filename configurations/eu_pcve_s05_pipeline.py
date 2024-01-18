@@ -27,8 +27,6 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             ),
             sync_config=RapidProToEngagementDBConfiguration(
                 flow_result_configurations=[
-                    FlowResultConfiguration("csap_eu_pcve_s05e01_activation", "rqa_eu_pcve_s05e01", "eu_pcve_s05e01"),
-
                     # (Demographics use the same flow as seasons 1+2+3+4 (with disability asked since e03))
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "gender", "gender"),
