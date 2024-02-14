@@ -148,6 +148,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             drive_dir="eu_pcve_analysis_outputs/s05"
         ),
         dataset_configurations=[
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s05e01"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s05e01_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e01"),
+                        analysis_dataset="s05e01"
+                    )
+                ]
+            ),
             OperatorDatasetConfiguration(
                 raw_dataset="operator_raw",
                 coding_configs=[
