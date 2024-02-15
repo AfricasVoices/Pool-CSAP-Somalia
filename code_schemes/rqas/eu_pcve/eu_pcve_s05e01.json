@@ -4,6 +4,62 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-27d1c19c",
+            "DisplayText": "enhanced social interaction",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "enhanced_social_interaction",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-6d20ea2e",
+            "DisplayText": "positive impact",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "positive_impact",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-44ad9b42",
+            "DisplayText": "negative impact",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "negative_impact",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-02be6c41",
+            "DisplayText": "inter clan conflict",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "inter_clan_conflict",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-3991ed37",
+            "DisplayText": "need for reconciliation",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "need_for_reconciliation",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-9b21ad76",
+            "DisplayText": "need for awareness creation",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "need_for_awareness_creation",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-0ad41c0b",
+            "DisplayText": "other theme",
+            "CodeType": "Normal",
+            "NumericValue": 7,
+            "StringValue": "other_theme",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-NA-f93d3eb7",
             "CodeType": "Control",
             "ControlCode": "NA",
