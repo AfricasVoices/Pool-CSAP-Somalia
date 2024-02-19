@@ -62,6 +62,42 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     ws_code_match_value="eu_pcve_s05e01"
                 ),
                 CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s05e02",
+                    engagement_db_dataset="eu_pcve_s05e02",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e02"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s05e02"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s05e01_follow_up",
+                    engagement_db_dataset="eu_pcve_s05e01_follow_up",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e01_follow_up"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s05e01_follow_up"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s05e02_follow_up",
+                    engagement_db_dataset="eu_pcve_s05e02_follow_up",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e02_follow_up"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s05e02_follow_up"
+                ),
+                CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
                     engagement_db_dataset="location",
                     code_scheme_configurations=[
