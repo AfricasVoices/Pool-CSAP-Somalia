@@ -45,6 +45,13 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             )
         )
     ],
+    csv_sources=[
+        CSVSource(
+            "gs://avf-project-datasets/2024/EU-PCVE-S05/2024_EU-PCVE-S05E03_recovered_de_identified.csv",
+            engagement_db_datasets=[CSVDatasetConfiguration("eu_pcve_s05e03")],
+            timezone="Africa/Mogadishu"
+        )
+    ],
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
