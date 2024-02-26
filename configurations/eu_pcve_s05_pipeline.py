@@ -45,6 +45,8 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             )
         )
     ],
+    # Use PhoneCleaner instead
+    # https://github.com/AfricasVoices/Engagement-Data-Pipeline/blob/a85a694c704ed2c0e00c16bd2aeefeeba8d9d569/src/csv_to_engagement_db/csv_to_engagement_db.py#L65
     csv_sources=[
         CSVSource(
             "gs://avf-project-datasets/2024/EU-PCVE-S05/2024_EU-PCVE-S05E03_recovered_de_identified.csv",
