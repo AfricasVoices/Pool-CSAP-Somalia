@@ -59,6 +59,17 @@
       ]
     },
     {
+      "CodeID": "code-cc1b14b3",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s05e04",
+      "StringValue": "eu_pcve_s05e04",
+      "NumericValue": 89,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s05e04"
+      ]
+    },
+    {
       "CodeID": "code-9cc0ca9e",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s04e01",
