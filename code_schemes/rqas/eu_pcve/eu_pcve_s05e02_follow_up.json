@@ -4,6 +4,62 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-0bb5b511",
+            "DisplayText": "build education or skills training centres",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "build_education_or_skills_training_centres",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-7c4d5561",
+            "DisplayText": "provide financial support",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "provide_financial_support",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-5e843585",
+            "DisplayText": "provide free education",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "provide_free_education",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-be209614",
+            "DisplayText": "create job opportunities",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "create_job_opportunities",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-69b8047e",
+            "DisplayText": "improve security",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "improve_security",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-56dee910",
+            "DisplayText": "create awareness",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "create_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-b6fbfe52",
+            "DisplayText": "other theme",
+            "CodeType": "Normal",
+            "NumericValue": 7,
+            "StringValue": "other_theme",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-NA-f93d3eb7",
             "CodeType": "Control",
             "ControlCode": "NA",
