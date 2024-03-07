@@ -4,6 +4,78 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-aa1ae342",
+            "DisplayText": "promoting peace and stability",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "promoting_peace_and_stability",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-13bbb4d8",
+            "DisplayText": "fostering reconciliation",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "fostering_reconciliation",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-e7b5aad4",
+            "DisplayText": "providing essential services",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "providing_essential_services",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-3d180afb",
+            "DisplayText": "undertaking developmental projects",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "undertaking_developmental_projects",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-9eb7666b",
+            "DisplayText": "creating awareness",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "creating_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-138b7fbc",
+            "DisplayText": "doing nothing",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "doing_nothing",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-54566813",
+            "DisplayText": "no district council committee",
+            "CodeType": "Normal",
+            "NumericValue": 7,
+            "StringValue": "no_district_council_committee",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-b6d16792",
+            "DisplayText": "i do not know",
+            "CodeType": "Normal",
+            "NumericValue": 8,
+            "StringValue": "i_do_not_know",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-13f46eec",
+            "DisplayText": "other theme",
+            "CodeType": "Normal",
+            "NumericValue": 9,
+            "StringValue": "other_theme",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-NA-f93d3eb7",
             "CodeType": "Control",
             "ControlCode": "NA",
