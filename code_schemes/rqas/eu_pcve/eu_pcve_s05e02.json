@@ -4,6 +4,70 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-9151e553",
+            "DisplayText": "driving taxi or bajaajs",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "driving_taxi_or_bajaajs",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-b2002fb7",
+            "DisplayText": "business ventures",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "business_ventures",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-eb4ac73c",
+            "DisplayText": "farming activities",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "farming_activities",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-a751b782",
+            "DisplayText": "provide awareness",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "provide_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-984046d5",
+            "DisplayText": "create educational or skills training",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "create_educational_or_skills_training",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-d8d3a36f",
+            "DisplayText": "create job and business opportunities",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "create_job_and_business_opportunities",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-4b7ef8e3",
+            "DisplayText": "no income generating opportunities",
+            "CodeType": "Normal",
+            "NumericValue": 7,
+            "StringValue": "no_income_generating_opportunities",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-7ca26e6d",
+            "DisplayText": "other theme",
+            "CodeType": "Normal",
+            "NumericValue": 8,
+            "StringValue": "other_theme",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-NA-f93d3eb7",
             "CodeType": "Control",
             "ControlCode": "NA",
