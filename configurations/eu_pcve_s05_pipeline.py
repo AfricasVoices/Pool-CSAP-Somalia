@@ -31,9 +31,11 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     FlowResultConfiguration("csap_eu_pcve_s05e02_activation", "rqa_eu_pcve_s05e02", "eu_pcve_s05e02"),
                     FlowResultConfiguration("csap_eu_pcve_s05e03_activation", "rqa_eu_pcve_s05e03", "eu_pcve_s05e03"),
                     FlowResultConfiguration("csap_eu_pcve_s05e04_activation", "rqa_eu_pcve_s05e04", "eu_pcve_s05e04"),
+                    FlowResultConfiguration("csap_eu_pcve_s05e05_activation", "rqa_eu_pcve_s05e05", "eu_pcve_s05e05"),
 
                     FlowResultConfiguration("csap_eu_pcve_s05e01_follow_up_ad", "eu_pcve_s05e01_follow_up", "eu_pcve_s05e01_follow_up"),
                     FlowResultConfiguration("csap_eu_pcve_s05e02_follow_up_ad", "eu_pcve_s05e02_follow_up", "eu_pcve_s05e02_follow_up"),
+                    FlowResultConfiguration("csap_eu_pcve_s05e05_follow_up_ad", "eu_pcve_s05e05_follow_up", "eu_pcve_s05e05_follow_up"),
 
                     # (Demographics use the same flow as seasons 1+2+3+4 (with disability asked since e03))
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
@@ -109,6 +111,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     ws_code_match_value="eu_pcve_s05e04"
                 ),
                 CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s05e05",
+                    engagement_db_dataset="eu_pcve_s05e05",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e05"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s05e05"
+                ),
+                CodaDatasetConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s05e01_follow_up",
                     engagement_db_dataset="eu_pcve_s05e01_follow_up",
                     code_scheme_configurations=[
@@ -131,6 +145,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                         )
                     ],
                     ws_code_match_value="eu_pcve_s05e02_follow_up"
+                ),
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s05e05_follow_up",
+                    engagement_db_dataset="eu_pcve_s05e05_follow_up",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e05_follow_up"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s05e05_follow_up"
                 ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
@@ -268,6 +294,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                 ]
             ),
             AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s05e05"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s05e05_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e05"),
+                        analysis_dataset="s05e05"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
                 engagement_db_datasets=["eu_pcve_s05e01_follow_up"],
                 dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
                 raw_dataset="eu_pcve_s05e01_follow_up_raw",
@@ -286,6 +323,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     CodingConfiguration(
                         code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e02_follow_up"),
                         analysis_dataset="s05e02_follow_up"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s05e05_follow_up"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s05e05_follow_up_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s05e05_follow_up"),
+                        analysis_dataset="s05e05_follow_up"
                     )
                 ]
             ),

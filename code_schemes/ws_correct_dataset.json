@@ -48,6 +48,17 @@
       ]
     },
     {
+      "CodeID": "code-975d7dcb",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s05e05 follow up",
+      "StringValue": "eu_pcve_s05e05_follow_up",
+      "NumericValue": 90,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s05e05_follow_up"
+      ]
+    },
+    {
       "CodeID": "code-6800baa0",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s05e03",
@@ -67,6 +78,17 @@
       "VisibleInCoda": true,
       "MatchValues": [
         "eu_pcve_s05e04"
+      ]
+    },
+    {
+      "CodeID": "code-7b951e13",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s05e05",
+      "StringValue": "eu_pcve_s05e05",
+      "NumericValue": 91,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s05e05"
       ]
     },
     {
