@@ -4,6 +4,54 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-9f2d64d0",
+            "DisplayText": "promoting teachings of islam",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "promoting_teachings_of_islam",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-a1932bab",
+            "DisplayText": "creating awareness",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "creating_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-f51d16fd",
+            "DisplayText": "promoting peace and unity",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "promoting_peace_and_unity",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-4853ef56",
+            "DisplayText": "play a vital role",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "play_a_vital_role",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-ab61d91c",
+            "DisplayText": "through cooperation",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "through_cooperation",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-2b4209ee",
+            "DisplayText": "other theme",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "other_theme",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-NA-f93d3eb7",
             "CodeType": "Control",
             "ControlCode": "NA",
