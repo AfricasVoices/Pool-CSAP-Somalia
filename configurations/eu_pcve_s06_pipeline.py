@@ -27,6 +27,8 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             ),
             sync_config=RapidProToEngagementDBConfiguration(
                 flow_result_configurations=[
+                    FlowResultConfiguration("csap_eu_pcve_s06e01_activation", "rqa_eu_pcve_s06e01", "eu_pcve_s06e01"),
+
                     # (Demographics use the same flow as seasons 1+2+3+4+5 (with disability asked since e03))
                     FlowResultConfiguration("csap_eu_pcve_demog", "location", "location"),
                     FlowResultConfiguration("csap_eu_pcve_demog", "gender", "gender"),
@@ -43,6 +45,18 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
         sync_config=CodaSyncConfiguration(
             project_users_file_url="gs://avf-project-datasets/2021/EU-PCVE/s06/coda_users.json",
             dataset_configurations=[
+                CodaDatasetConfiguration(
+                    coda_dataset_id="EU_PCVE_rqa_s06e01",
+                    engagement_db_dataset="eu_pcve_s06e01",
+                    code_scheme_configurations=[
+                        CodeSchemeConfiguration(
+                            code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s06e01"),
+                            auto_coder=None,
+                            coda_code_schemes_count=3
+                        )
+                    ],
+                    ws_code_match_value="eu_pcve_s06e01"
+                ),
                 CodaDatasetConfiguration(
                     coda_dataset_id="CSAP_location",
                     engagement_db_dataset="location",
@@ -134,6 +148,17 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
             drive_dir="eu_pcve_analysis_outputs/s06"
         ),
         dataset_configurations=[
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s06e01"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s06e01_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s06e01"),
+                        analysis_dataset="s06e01"
+                    )
+                ]
+            ),
             OperatorDatasetConfiguration(
                 raw_dataset="operator_raw",
                 coding_configs=[
