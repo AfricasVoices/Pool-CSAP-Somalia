@@ -45,7 +45,7 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
     coda_sync=CodaConfiguration(
         coda=CodaClientConfiguration(credentials_file_url="gs://avf-credentials/coda-production.json"),
         sync_config=CodaSyncConfiguration(
-            project_users_file_url="gs://avf-project-datasets/2021/EU-PCVE/s06/coda_users.json",
+            project_users_file_url="gs://avf-project-datasets/2021/EU-PCVE/s05/coda_users.json",
             dataset_configurations=[
                 CodaDatasetConfiguration(
                     coda_dataset_id="EU_PCVE_rqa_s06e01",
