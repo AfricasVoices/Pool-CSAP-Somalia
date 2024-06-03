@@ -4,6 +4,17 @@
   "Version": "0.0.0.7",
   "Codes": [
     {
+      "CodeID": "code-a16ed97e",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s06e01",
+      "StringValue": "eu_pcve_s06e01",
+      "NumericValue": 92,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s06e01"
+      ]
+    },
+    {
       "CodeID": "code-8d150694",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s05e01",
