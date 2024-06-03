@@ -4,6 +4,54 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-5cd4bd3f",
+            "DisplayText": "conducting sport tournaments",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "conducting_sport_tournaments",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-1a8a3f5b",
+            "DisplayText": "establishing social centres",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "establishing_social_centres",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-1f92f396",
+            "DisplayText": "educating them",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "educating_them",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-48484971",
+            "DisplayText": "creating awareness",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "creating_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-9d74c2d8",
+            "DisplayText": "involving the youth",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "involving_the_youth",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-43bddfb3",
+            "DisplayText": "enhancing peace and security",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "enhancing_peace_and_security",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-0ad41c0b",
             "DisplayText": "other theme",
             "CodeType": "Normal",
