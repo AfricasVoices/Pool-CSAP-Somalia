@@ -185,6 +185,28 @@ PIPELINE_CONFIGURATION = PipelineConfiguration(
                     )
                 ]
             ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s06e02"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s06e02_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s06e02"),
+                        analysis_dataset="s06e02"
+                    )
+                ]
+            ),
+            AnalysisDatasetConfiguration(
+                engagement_db_datasets=["eu_pcve_s06e03"],
+                dataset_type=DatasetTypes.RESEARCH_QUESTION_ANSWER,
+                raw_dataset="eu_pcve_s06e03_raw",
+                coding_configs=[
+                    CodingConfiguration(
+                        code_scheme=load_code_scheme("rqas/eu_pcve/eu_pcve_s06e03"),
+                        analysis_dataset="s06e03"
+                    )
+                ]
+            ),
             OperatorDatasetConfiguration(
                 raw_dataset="operator_raw",
                 coding_configs=[
