@@ -4,6 +4,62 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-292cdb3f",
+            "DisplayText": "creating job opportunities",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "creating_job_opportunities",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-29f71317",
+            "DisplayText": "avoiding clannism",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "avoiding_clannism",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-97e9c4a0",
+            "DisplayText": "fostering peace and security",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "fostering_peace_and_security",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-2fe57d2d",
+            "DisplayText": "establishing youth associations",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "establishing_youth_associations",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-24c1bb5f",
+            "DisplayText": "creating awareness",
+            "CodeType": "Normal",
+            "NumericValue": 5,
+            "StringValue": "creating_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-412ac997",
+            "DisplayText": "preventing deforestaions",
+            "CodeType": "Normal",
+            "NumericValue": 6,
+            "StringValue": "preventing_deforestaions",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-f2879152",
+            "DisplayText": "involving the youth",
+            "CodeType": "Normal",
+            "NumericValue": 7,
+            "StringValue": "involving_the_youth",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-0ad41c0b",
             "DisplayText": "other theme",
             "CodeType": "Normal",
