@@ -4,6 +4,38 @@
     "Version": "0.0.0.1",
     "Codes": [
         {
+            "CodeID": "code-539e90ba",
+            "DisplayText": "creating awareness",
+            "CodeType": "Normal",
+            "NumericValue": 1,
+            "StringValue": "creating_awareness",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-18f26497",
+            "DisplayText": "promoting unity and cooperation",
+            "CodeType": "Normal",
+            "NumericValue": 2,
+            "StringValue": "promoting_unity_and_cooperation",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-2f666ef9",
+            "DisplayText": "participating in community affairs",
+            "CodeType": "Normal",
+            "NumericValue": 3,
+            "StringValue": "participating_in_community_affairs",
+            "VisibleInCoda": true
+        },
+        {
+            "CodeID": "code-568254ab",
+            "DisplayText": "for mobilisation purpose",
+            "CodeType": "Normal",
+            "NumericValue": 4,
+            "StringValue": "for_mobilisation_purpose",
+            "VisibleInCoda": true
+        },
+        {
             "CodeID": "code-0ad41c0b",
             "DisplayText": "other theme",
             "CodeType": "Normal",
