@@ -4,6 +4,28 @@
   "Version": "0.0.0.7",
   "Codes": [
     {
+      "CodeID": "code-e2a92845",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s06 Evaluation",
+      "StringValue": "eu_pcve_s06_evaluation",
+      "NumericValue": 95,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s06_evaluation"
+      ]
+    },
+    {
+      "CodeID": "code-c4734e63",
+      "CodeType": "Normal",
+      "DisplayText": "EU-PCVE s06 Closeout",
+      "StringValue": "eu_pcve_s06_closeout",
+      "NumericValue": 96,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "eu_pcve_s06_closeout"
+      ]
+    },
+    {
       "CodeID": "code-a16ed97e",
       "CodeType": "Normal",
       "DisplayText": "EU-PCVE s06e01",
